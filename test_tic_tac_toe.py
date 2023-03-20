@@ -12,3 +12,12 @@ def test_print_board():
     assert tic_tac_toe.board == ["-", "-", "-",
                                  "-", "-", "-",
                                  "-", "-", "-"]
+    
+def test_player_input():
+    tic_tac_toe.board = ["-", "-", "-",
+                         "-", "-", "-",
+                         "-", "-", "-"]
+    tic_tac_toe.current_player = "X"
+    tic_tac_toe.winner = None
+    tic_tac_toe.game_running = True
+    tic_tac_toe.player_input()
