@@ -20,3 +20,7 @@ def player_input():
         board[position - 1] = current_player
     else:
         print("Invalid position")
+        
+while game_running:
+    print_board()
+    player_input()
