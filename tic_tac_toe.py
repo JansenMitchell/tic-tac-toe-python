@@ -1,28 +1,61 @@
-board = ["-", "-", "-",
-         "-", "-", "-",
-         "-", "-", "-"]
-current_player = "X"
-winner = None
-game_running = True
+# a simple Tic Tac Toe program that satisfies the following requirements:
+# It must have a UI so that I can play.  A console UI will do just fine.
+# The program must play fair Tic Tac Toe against me
+# The program must be unbeatable, and win every chance I give it
 
-def print_board():
-    print(board[0] + " | " + board[1] + " | " + board[2])
-    print(board[3] + " | " + board[4] + " | " + board[5])
-    print(board[6] + " | " + board[7] + " | " + board[8])
+import random
 
-#def player_input():
-    
-    # Check if the position is valid
-  
-        # If it is, set the position to the current player
+# Board class
+class Board:
+    # Initializes the board with a list of 9 zeros.
+    def __init__(self):
+        self.board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-        
-#def check_horizontal():
-    # Check if the current player has won horizontally
+    def display(self):
+        print(self.board[0], self.board[1], self.board[2])
+        print(self.board[3], self.board[4], self.board[5])
+        print(self.board[6], self.board[7], self.board[8])
 
-    # Check if the first row has the same value
-    
-        
-#while game_running:
-print_board()
-    #player_input()
+    # Updates the board with the player's move.
+    def update(self, position, player):
+        # Checks if the position is empty.
+        self.board[position] = player
+
+    def check_win(self, player):
+        # Check rows
+        if self.board[0] == player and self.board[1] == player and self.board[2] == player:
+            return True
+        if self.board[3] == player and self.board[4] == player and self.board[5] == player:
+            return True
+        if self.board[6] == player and self.board[7] == player and self.board[8] == player:
+            return True
+        # Check columns
+        if self.board[0] == player and self.board[3] == player and self.board[6] == player:
+            return True
+        if self.board[1] == player and self.board[4] == player and self.board[7] == player:
+            return True
+        if self.board[2] == player and self.board[5] == player and self.board[8] == player:
+            return True
+        # Check diagonals
+        if self.board[0] == player and self.board[4] == player and self.board[8] == player:
+            return True
+        if self.board[2] == player and self.board[4] == player and self.board[6] == player:
+            return True
+        return False
+
+    def check_draw(self):
+        for i in range(9):
+            # If the board has an empty position, return False.
+            if self.board[i] == 0:
+                return False
+        # Returns True if the board has no winning row, column, or diagonal.
+        return True
+
+    def check_game_over(self, player):
+        if self.check_win(player) or self.check_draw():
+            return True
+        return False
+
+# Resets the board to a new game.
+    def reset(self):
+        self.board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
