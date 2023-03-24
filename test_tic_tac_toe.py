@@ -36,3 +36,14 @@ def test_player_init():
     player = tic_tac_toe.Player('Player 1', 'X')
     assert player.name == 'Player 1'
     assert player.marker == 'X'
+    
+# Test for Human Player class
+def test_human_player_init():
+    human_player = tic_tac_toe.HumanPlayer('Player 1', 'X')
+    assert human_player.name == 'Player 1'
+    assert human_player.marker == 'X'
+
+def test_human_player_get_move():
+    human_player = tic_tac_toe.HumanPlayer('Player 1', 'X')
+    board = tic_tac_toe.Board()
+    assert human_player.get_move(board) == int(input('Enter a position (0-8): '))

@@ -23,7 +23,6 @@ class Board:
     def reset(self):
         self.board = [' ' for _ in range(9)]
         
-# TODO: Player class
 class Player:
     def __init__(self, name, marker):
         self.name = name
@@ -31,7 +30,19 @@ class Player:
         
     def get_move(self, board):
         pass
+    
 # TODO: Human Player class
+class HumanPlayer(Player):
+    def __init__(self, name, marker):
+        super().__init__(name, marker)
+        
+    def get_move(self, board):
+        while True:
+            position = input('Enter a position (0-8): ')
+            if position.isdigit() and board.is_empty(int(position)):
+                return int(position)
+            else:
+                print('Invalid move. Try again.')
 
 # TODO: AI Player class
 
