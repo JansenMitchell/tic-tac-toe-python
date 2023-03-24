@@ -3,59 +3,26 @@
 # The program must play fair Tic Tac Toe against me
 # The program must be unbeatable, and win every chance I give it
 
+# Required imports
 import random
 
-# Board class
+# TODO: Board class
+# This class can have methods to initialize the board
+# and take in a move and mark it on the board.
 class Board:
-    # Initializes the board with a list of 9 zeros.
     def __init__(self):
-        self.board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    def mark(self, move, mark):
+        # Assigns the mark to the board at the move index
+        self.board[move - 1] = mark
+    
+# TODO: Player class
+# This class can have methods to get the player’s move and mark on the board.
 
-    def display(self):
-        print(self.board[0], self.board[1], self.board[2])
-        print(self.board[3], self.board[4], self.board[5])
-        print(self.board[6], self.board[7], self.board[8])
+# TODO: AI class
+# Use the minimax algorithm to determine the best move for the AI
 
-    # Updates the board with the player's move.
-    def update(self, position, player):
-        # Checks if the position is empty.
-        self.board[position] = player
-
-    def check_win(self, player):
-        # Check rows
-        if self.board[0] == player and self.board[1] == player and self.board[2] == player:
-            return True
-        if self.board[3] == player and self.board[4] == player and self.board[5] == player:
-            return True
-        if self.board[6] == player and self.board[7] == player and self.board[8] == player:
-            return True
-        # Check columns
-        if self.board[0] == player and self.board[3] == player and self.board[6] == player:
-            return True
-        if self.board[1] == player and self.board[4] == player and self.board[7] == player:
-            return True
-        if self.board[2] == player and self.board[5] == player and self.board[8] == player:
-            return True
-        # Check diagonals
-        if self.board[0] == player and self.board[4] == player and self.board[8] == player:
-            return True
-        if self.board[2] == player and self.board[4] == player and self.board[6] == player:
-            return True
-        return False
-
-    def check_draw(self):
-        for i in range(9):
-            # If the board has an empty position, return False.
-            if self.board[i] == 0:
-                return False
-        # Returns True if the board has no winning row, column, or diagonal.
-        return True
-
-    def check_game_over(self, player):
-        if self.check_win(player) or self.check_draw():
-            return True
-        return False
-
-# Resets the board to a new game.
-    def reset(self):
-        self.board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+# TODO: Game class
+# This class can have methods to initialize the game, 
+# get the current player, get the next move, and check if the game is over.
