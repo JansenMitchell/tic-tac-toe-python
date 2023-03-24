@@ -30,3 +30,9 @@ def test_board_reset():
     board.board = ['X' for _ in range(9)]
     board.reset()
     assert board.board == [' ' for _ in range(9)]
+    
+# Test for Player class
+def test_player_init():
+    player = tic_tac_toe.Player('Player 1', 'X')
+    assert player.name == 'Player 1'
+    assert player.marker == 'X'

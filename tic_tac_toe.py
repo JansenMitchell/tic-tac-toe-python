@@ -24,7 +24,15 @@ class Board:
         self.board = [' ' for _ in range(9)]
         
 # TODO: Player class
+class Player:
+    def __init__(self, name, marker):
+        self.name = name
+        self.marker = marker
+        
+    def get_move(self, board):
+        pass
+# TODO: Human Player class
 
-# TODO: AI class
+# TODO: AI Player class
 
 # TODO: Game class
