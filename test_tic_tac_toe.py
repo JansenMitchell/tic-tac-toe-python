@@ -7,6 +7,9 @@ def test_board_init():
     assert board
     
 # Test board is empty.
+def test_board_is_empty():
+    board = tic_tac_toe.Board()
+    assert board.board == [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 
 # Test board is full.
 
