@@ -18,6 +18,11 @@ def test_board_is_full():
     assert board.is_full()
 
 # Test board resets.
+def test_board_reset():
+    board = tic_tac_toe.Board()
+    board.board = [["X", "X", "O"], ["O", "O", "X"], ["X", "O", "X"]]
+    board.reset()
+    assert board.board == [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 
 # Test board is printed as a 3x3 grid.
 

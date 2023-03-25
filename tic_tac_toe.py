@@ -8,3 +8,6 @@ class Board:
     
     def is_full(self):
         return not any(" " in row for row in self.board)
+    
+    def reset(self):
+        self.board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
