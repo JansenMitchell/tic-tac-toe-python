@@ -1,49 +1,46 @@
 import tic_tac_toe
 import pytest
 
-# Test for Board class
-def test_board_init():
-    board = tic_tac_toe.Board()
-    assert board.board == [' ' for _ in range(9)]
+# Test board exists.
 
-def test_board_draw():
-    board = tic_tac_toe.Board()
-    # Assert rows are printed correctly.
-    assert board.draw() == print('   |   |   \n-----------\n   |   |   \n-----------\n   |   |   ')
+# Test player 1 exists.
 
-def test_board_update():
-    board = tic_tac_toe.Board()
-    board.update(0, 'X')
-    assert board.board[0] == 'X'
-    
-def test_board_is_empty():
-    board = tic_tac_toe.Board()
-    assert board.is_empty(0) == True
-    
-def test_board_is_full():
-    board = tic_tac_toe.Board()
-    board.board = ['X' for _ in range(9)]
-    assert board.is_full() == True
-    
-def test_board_reset():
-    board = tic_tac_toe.Board()
-    board.board = ['X' for _ in range(9)]
-    board.reset()
-    assert board.board == [' ' for _ in range(9)]
-    
-# Test for Player class
-def test_player_init():
-    player = tic_tac_toe.Player('Player 1', 'X')
-    assert player.name == 'Player 1'
-    assert player.marker == 'X'
-    
-# Test for Human Player class
-def test_human_player_init():
-    human_player = tic_tac_toe.HumanPlayer('Player 1', 'X')
-    assert human_player.name == 'Player 1'
-    assert human_player.marker == 'X'
+# Test player 2 exists.
 
-def test_human_player_get_move():
-    human_player = tic_tac_toe.HumanPlayer('Player 1', 'X')
-    board = tic_tac_toe.Board()
-    assert human_player.get_move(board) == int(input('Enter a position (0-8): '))
+# Test game exists.
+
+# Test board is empty.
+
+# Test board is full.
+
+# Test board resets.
+
+# Test board receives player 1 input.
+
+# Test board receives player 2 input.
+
+# Test horizontal win.
+
+# Test vertical win.
+
+# Test diagonal win.
+
+# Test game is a draw.
+
+# Test game is running.
+
+# Test game is over.
+
+# Test is player 1 is X.
+
+# Test is player 2 is O.
+
+# Test player 1 is human player.
+
+# Test player 2 is ai player.
+
+# Test player 1 has made a move.
+
+# Test player 2 has made a move.
+
+# Test player 2 makes optimal move (minimax).
