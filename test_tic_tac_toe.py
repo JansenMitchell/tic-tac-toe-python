@@ -12,6 +12,10 @@ def test_board_is_empty():
     assert board.board == [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 
 # Test board is full.
+def test_board_is_full():
+    board = tic_tac_toe.Board()
+    board.board = [["X", "X", "O"], ["O", "O", "X"], ["X", "O", "X"]]
+    assert board.is_full()
 
 # Test board resets.
 
