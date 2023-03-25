@@ -25,6 +25,11 @@ def test_board_reset():
     assert board.board == [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 
 # Test board is printed as a 3x3 grid.
+def test_board_print():
+    board = tic_tac_toe.Board()
+    board.board = [["X", "X", "O"], ["O", "O", "X"], ["X", "O", "X"]]
+    # Three rows of 3 columns with dividers.
+    assert board.__str__() == "X | X | O \n---------\nO | O | X \n---------\nX | O | X \n"
 
 # Test board receives player 1 input.
 
