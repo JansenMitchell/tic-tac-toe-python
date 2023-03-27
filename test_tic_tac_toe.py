@@ -43,3 +43,15 @@ def test_is_space_free():
     assert tic_tac_toe.is_space_free(board, 7) == False
     assert tic_tac_toe.is_space_free(board, 8) == False
     assert tic_tac_toe.is_space_free(board, 9) == False
+    
+def test_get_player_move():
+    board = [' '] * 10
+    assert tic_tac_toe.get_player_move(board) == 1
+    assert tic_tac_toe.get_player_move(board) == 2
+    assert tic_tac_toe.get_player_move(board) == 3
+    assert tic_tac_toe.get_player_move(board) == 4
+    assert tic_tac_toe.get_player_move(board) == 5
+    assert tic_tac_toe.get_player_move(board) == 6
+    assert tic_tac_toe.get_player_move(board) == 7
+    assert tic_tac_toe.get_player_move(board) == 8
+    assert tic_tac_toe.get_player_move(board) == 9
