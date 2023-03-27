@@ -1,6 +1,6 @@
-import tic_tac_toe
-import pytest
+import tic_tac_toe, pytest
 
-def test_draw_board():
-    board = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
-    expected = ('-' * 13 + '| X | O | X |' + '-' * 13 + '| O | X | O |' + '-' * 13 + '| X | O | X |' + '-' * 13)
+def test_draw_board(capsys):
+    tic_tac_toe.draw_board(['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'])
+    out, err = capsys.readouterr()
+    assert out == '-------------\n| X | X | X |\n-------------\n| X | X | X |\n-------------\n| X | X | X |\n-------------\n'
