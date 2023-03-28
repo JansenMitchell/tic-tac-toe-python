@@ -10,6 +10,21 @@ def test_get_player_move(capsys):
     # Will only accept numbers 0-8
     out, err = capsys.readouterr()
     assert out == 'Enter your move (0-8): '
+    
+def test_minimax():
+    assert tic_tac_toe.minimax(['X', 'X', 'X', ' ', ' ', ' ', ' ', ' ', ' '], 0, True) == -1
+    assert tic_tac_toe.minimax([' ', ' ', ' ', 'X', 'X', 'X', ' ', ' ', ' '], 0, True) == -1
+    assert tic_tac_toe.minimax([' ', ' ', ' ', ' ', ' ', ' ', 'X', 'X', 'X'], 0, True) == -1
+    assert tic_tac_toe.minimax(['X', ' ', ' ', 'X', ' ', ' ', 'X', ' ', ' '], 0, True) == -1
+    assert tic_tac_toe.minimax([' ', 'X', ' ', ' ', 'X', ' ', ' ', 'X', ' '], 0, True) == -1
+    assert tic_tac_toe.minimax([' ', ' ', 'X', ' ', ' ', 'X', ' ', ' ', 'X'], 0, True) == -1
+    assert tic_tac_toe.minimax(['X', ' ', ' ', ' ', 'X', ' ', ' ', ' ', 'X'], 0, True) == -1
+    assert tic_tac_toe.minimax([' ', ' ', 'X', ' ', 'X', ' ', 'X', ' ', ' '], 0, True) == -1
+    assert tic_tac_toe.minimax(['O', 'O', 'O', ' ', ' ', ' ', ' ', ' ', ' '], 0, True) == 1
+    assert tic_tac_toe.minimax([' ', ' ', ' ', 'O', 'O', 'O', ' ', ' ', ' '], 0, True) == 1
+    assert tic_tac_toe.minimax([' ', ' ', ' ', ' ', ' ', ' ', 'O', 'O', 'O'], 0, True) == 1
+    assert tic_tac_toe.minimax(['O', ' ', ' ', 'O', ' ', ' ', 'O', ' ', ' '], 0, True) == 1
+    assert tic_tac_toe.minimax([' ', 'O', ' ', ' ', 'O', ' ', ' ', 'O', ' '], 0, True) == 1
 
 # Test if the AI move is a valid move    
 def test_get_ai_move():
