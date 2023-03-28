@@ -54,3 +54,5 @@ def game_loop():
         print('Tie!')
     else:
         print(check_winner(board) + ' wins!')
+        
+game_loop()
