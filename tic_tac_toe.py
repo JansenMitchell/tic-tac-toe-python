@@ -38,3 +38,19 @@ def check_winner(board):
     if ' ' not in board:
         return 'tie'
     return None
+
+def game_loop():
+    board = [' '] * 9
+    while True:
+        draw_board(board)
+        get_player_move(board)
+        if check_winner(board):
+            break
+        get_ai_move(board)
+        if check_winner(board):
+            break
+    draw_board(board)
+    if check_winner(board) == 'tie':
+        print('Tie!')
+    else:
+        print(check_winner(board) + ' wins!')

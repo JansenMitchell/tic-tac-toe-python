@@ -33,3 +33,7 @@ def test_check_winner():
     assert tic_tac_toe.check_winner([' ', 'O', ' ', ' ', 'O', ' ', ' ', 'O', ' ']) == 'O'
     assert tic_tac_toe.check_winner([' ', ' ', 'O', ' ', ' ', 'O', ' ', ' ', 'O']) == 'O'
     assert tic_tac_toe.check_winner(['O', ' ', ' ', ' ', 'O', ' ', ' ', ' ', 'O']) == 'O'
+    
+# Test if game is running. If it is, it will return True
+def test_game_loop():
+    assert tic_tac_toe.game_loop() == True
