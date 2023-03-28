@@ -10,3 +10,9 @@ def test_get_player_move(capsys):
     # Will only accept numbers 0-8
     out, err = capsys.readouterr()
     assert out == 'Enter your move (0-8): '
+
+# Test if the AI move is a valid move    
+def test_get_ai_move():
+    board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+    tic_tac_toe.get_ai_move(board)
+    assert board[0] == 'O' or board[1] == 'O' or board[2] == 'O' or board[3] == 'O' or board[4] == 'O' or board[5] == 'O' or board[6] == 'O' or board[7] == 'O' or board[8] == 'O'

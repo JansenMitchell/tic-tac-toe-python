@@ -21,3 +21,7 @@ def get_player_move(board):
         except ValueError:
             print('Invalid move. Please choose an empty position (0-8).')
     board[position] = 'X'
+    
+def get_ai_move(board):
+    position = random.choice([i for i in range(9) if board[i] == ' '])
+    board[position] = 'O'
