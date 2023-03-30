@@ -28,20 +28,31 @@ def minimax(board, depth, is_maximizing):
         return -1
     elif winner == 'tie':
         return 0
+    # If is_maximizing is True, the AI is trying to maximize its score
     if is_maximizing:
+        # Set the best score to the lowest possible value as a starting point,
+        # which is -float('inf') or -infinity.
         best_score = -float('inf')
+        # Iterate over all possible moves
         for i in range(9):
+            # Check if the position is empty
             if board[i] == ' ':
+                # Make the move
                 board[i] = 'O'
+                # Recursively call minimax with is_maximizing set to False to simulate the player's turn
                 score = minimax(board, depth + 1, False)
+                # Undo the move
                 board[i] = ' '
+                # Update the best score
                 best_score = max(score, best_score)
         return best_score
     else:
+        # Set the best score to the highest possible value as a starting point
         best_score = float('inf')
         for i in range(9):
             if board[i] == ' ':
                 board[i] = 'X'
+                # Recursively call minimax with is_maximizing set to True to simulate the AI's turn
                 score = minimax(board, depth + 1, True)
                 board[i] = ' '
                 best_score = min(score, best_score)
@@ -49,15 +60,18 @@ def minimax(board, depth, is_maximizing):
     
 def get_ai_move(board):
     best_score = -float('inf')
+    # Set the best move to the first possible move as a starting point
     best_move = None
     for i in range(9):
         if board[i] == ' ':
             board[i] = 'O'
             score = minimax(board, 0, False)
             board[i] = ' '
+            # Update the best score and best move
             if score > best_score:
                 best_score = score
                 best_move = i
+    # Make the move
     board[best_move] = 'O'
 
     

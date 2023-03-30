@@ -10,7 +10,8 @@ def test_get_player_move(capsys):
     # Will only accept numbers 0-8
     out, err = capsys.readouterr()
     assert out == 'Enter your move (0-8): '
-    
+
+# Test if the AI can win the game    
 def test_minimax():
     assert tic_tac_toe.minimax(['X', 'X', 'X', ' ', ' ', ' ', ' ', ' ', ' '], 0, True) == -1
     assert tic_tac_toe.minimax([' ', ' ', ' ', 'X', 'X', 'X', ' ', ' ', ' '], 0, True) == -1
