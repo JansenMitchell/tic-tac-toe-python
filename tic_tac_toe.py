@@ -63,6 +63,7 @@ def get_ai_move(board):
     for i in range(9):
         if board[i] == ' ':
             board[i] = 'O'
+            # Recursively call minimax with is_maximizing set to False to simulate the player's turn
             score = minimax(board, 0, False)
             board[i] = ' '
             # Update the best score and best move
