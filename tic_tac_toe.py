@@ -7,10 +7,13 @@ def draw_board(board):
     print('| ' + board[6] + ' | ' + board[7] + ' | ' + board[8] + ' |')
     print('-------------')
     
-def get_player_move(board):
+def get_player_move(board, test_input=None):
     while True:
         try:
-            position = int(input('Enter your move (0-8): '))
+            if test_input is not None:
+                position = test_input
+            else:
+                position = int(input('Enter your move (0-8): '))
         except ValueError:
             print("Invalid input. Please enter a number between 0 and 8.")
             continue

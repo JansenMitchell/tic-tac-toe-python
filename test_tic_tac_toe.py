@@ -5,11 +5,10 @@ def test_draw_board(capsys):
     out, err = capsys.readouterr()
     assert out == '-------------\n| X | X | X |\n-------------\n| X | X | X |\n-------------\n| X | X | X |\n-------------\n'
     
-def test_get_player_move(capsys):
-    tic_tac_toe.get_player_move([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
-    # Will only accept numbers 0-8
-    out, err = capsys.readouterr()
-    assert out == 'Enter your move (0-8): '
+def test_get_player_move():
+    board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+    tic_tac_toe.get_player_move(board, test_input=0)
+    assert board[0] == 'X'
 
 # Test if the AI can win the game    
 def test_minimax():
