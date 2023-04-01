@@ -116,5 +116,4 @@ def game_loop():
     else:
         print(check_winner(board) + ' wins!')
 
-# Disable the loop for testing and enter a valid move to run tests.        
 game_loop()
