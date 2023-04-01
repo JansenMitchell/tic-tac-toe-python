@@ -9,7 +9,12 @@ def draw_board(board):
     
 def get_player_move(board):
     while True:
-        position = int(input('Enter your move (0-8): '))
+        try:
+            position = int(input('Enter your move (0-8): '))
+        except ValueError:
+            print("Invalid input. Please enter a number between 0 and 8.")
+            continue
+
         if position not in range(9):
             print("Invalid move. Please choose an empty position (0-8).")
         elif board[position] != ' ':
